@@ -8,9 +8,20 @@
   .global-wrapper {
     width: 85%;
   }
+  .latest-news .text-ct {
+    padding: 20px 15px 30px;
+  }
+  .latest-news .text-ct p {
+    margin: 0 0 50px;
+  }
 }
 @media screen and (max-width: 1280px){
-
+  .latest-news {
+    figure {
+      width: 70%;
+      margin: 0 auto 30px;
+    }
+  }
 }
 @media screen and (max-width: 1024px){
 
