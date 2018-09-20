@@ -21,10 +21,16 @@ $('.fade').slick({
 });
 
 $(document).ready(function(){
-
-
+    $('#nav-icon3').click(function(){
+        $(this).toggleClass('open');
+    });
 });
-
+$('#nav-icon3').on('click',function(){
+    if($('nav').is(":visible")){
+        $('nav').hide();
+    }
+    else $('nav').show();
+});
 $(window).on('load', function(){
 
 });
