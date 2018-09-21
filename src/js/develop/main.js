@@ -19,6 +19,14 @@ $('.fade').slick({
     fade: true,
     cssEase: 'linear'
 });
+var slider = $(".slider");
+var newsBlock = $(".latest-news");
+var offsetSlider = slider.offset();
+var offsetNewsBlock = newsBlock.offset();
+var mainOffset = offsetSlider.top + (slider.height() / 2);
+var newsBlockOffset = offsetNewsBlock.top;
+console.log("offsetSlider " + mainOffset);
+console.log("newsBlockOffset " + newsBlockOffset);
 
 $(document).ready(function(){
     $('#nav-icon3').click(function(){
@@ -38,4 +46,22 @@ $(window).on('load', function(){
 
 $(window).resize(function(){
 
+});
+
+$(window).scroll(function(){
+    var windowScrollTop = $(this).scrollTop();
+
+    if(windowScrollTop > mainOffset && windowScrollTop < newsBlockOffset){
+        console.log(">");
+        $('.latest-news figure:nth-child(1), .latest-news figure:nth-child(2)').removeClass("hidden");
+        $('.latest-news figure:nth-child(1), .latest-news figure:nth-child(2)').addClass("visible");
+    } else if(windowScrollTop > newsBlockOffset) {
+        $('.latest-news figure:nth-child(1), .latest-news figure:nth-child(2), .latest-news figure:nth-child(3), .latest-news figure:nth-child(4)').removeClass("hidden");
+        $('.latest-news figure:nth-child(1), .latest-news figure:nth-child(2), .latest-news figure:nth-child(3), .latest-news figure:nth-child(4)').addClass("visible");
+        console.log('news >');
+    } else {
+        console.log("<");
+        $('.latest-news figure').removeClass("visible");
+        $('.latest-news figure').addClass("hidden");
+    }
 });

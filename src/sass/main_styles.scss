@@ -373,6 +373,7 @@ header {
     flex-wrap: wrap;
   }
   figure {
+    transition: .5s;
     margin: 0 0 30px;
     display: flex;
     justify-content: center;
@@ -387,6 +388,12 @@ header {
         order: 2;
       }
     }
+  }
+  .visible {
+    opacity: 1;
+  }
+  .hidden {
+    opacity: 0;
   }
   .img-ct {
     width: 50%;

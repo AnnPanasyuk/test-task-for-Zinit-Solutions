@@ -261,6 +261,22 @@
   }
 }
 @media screen and (max-width: 480px){
+  header {
+    .logo-ct {
+      order: 1;
+    }
+    .toggle {
+      width: auto;
+      margin: 0 0 0 10px;
+      order: 4;
+    }
+    .form {
+      order: 2;
+    }
+    .icons-block {
+      order: 3;
+    }
+  }
   h2 {
     font-size: 32px;
   }
