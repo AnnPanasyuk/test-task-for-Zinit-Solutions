@@ -296,23 +296,43 @@ header {
     margin: 0;
   }
   .slide-ct {
-    background: url("../images/slide-bg.png") no-repeat 50% 100%;
     background-size: cover;
+    position: relative;
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #0099d2;
+      opacity: .3;
+    }
     .text-ct {
       width: 41%;
       margin: 165px auto 175px;
     }
     h2 {
       line-height: 48px;
+      color: #000000;
     }
     p {
+      color: #000000;
       text-align: center;
-      color: #919191;
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
     }
+  }
+  .slide-1 {
+    background: url("../images/slide1.jpg");
+  }
+  .slide-2 {
+    background: url("../images/slide2.jpeg");
+  }
+  .slide-3 {
+    background: url("../images/slide3.jpeg");
   }
   .slick-arrow {
     font-size: 1px;
@@ -361,7 +381,7 @@ header {
     }
   }
 }
-.latest-news {
+.main-card-block {
   padding: 80px 0;
   h2 {
     line-height: 17.96px;
@@ -397,6 +417,7 @@ header {
   }
   .img-ct {
     width: 50%;
+    height: 285px;
     img {
       width: 100%;
       height: 100%;
@@ -413,7 +434,7 @@ header {
       font-family: 'Montserrat', sans-serif;
       color: #2f2f2f;
       font-size: 20px;
-      line-height: 38px;
+      line-height: 25px;
       text-transform: uppercase;
     }
     p {
@@ -445,7 +466,7 @@ header {
     }
   }
 }
-.our-vision {
+.main-info-block {
   background: url("../images/our-vision-bg.png") no-repeat 50% 100% fixed;
   background-size: cover;
   padding: 80px 0 90px;
@@ -453,7 +474,8 @@ header {
     margin: 0 0 45px;
     line-height: 24px;
   }
-  p {
+  p, a {
+    display: block;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -462,9 +484,34 @@ header {
     line-height: 24px;
     margin: 0 0 30px;
   }
-  img {
+  svg{
+    width: 30px;
+    height: 30px;
+    fill: #0099d2;
     display: block;
     margin: 0 auto;
+  }
+}
+.contact, .services, .doctors {
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      margin: 5px 0;
+      p, a {
+        margin: 0;
+      }
+    }
+  }
+}
+.doctors {
+  ul {
+    width: 50%;
+    margin: 30px auto 0;
+    p {
+      padding: 5px 0;
+      text-align: center;
+    }
   }
 }
 .gift-card {
@@ -576,6 +623,42 @@ footer {
       font-size: 12px;
       font-weight: 300;
       line-height: 32px;
+    }
+  }
+
+}
+.form-ct {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px auto;
+  }
+  input {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 4px;
+    color: #919191;
+    border: 1px solid #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 5px #919191;
+  }
+  button {
+    background-color: #0099d2;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 15px 52px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+    border: none;
+    border-radius: 4px;
+    &:hover {
+      opacity: .7;
     }
   }
 }
